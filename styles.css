@@ -1,0 +1,266 @@
+/* CSS Setup and Reset from https://www.joshwcomeau.com/css/custom-css-reset/*/
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+    2. Remove default margin
+  */
+:root {
+  margin: 0;
+  --backgroundColor: #3b4664;
+  /* theme-2 #E6E6E6
+  theme-3 #17062A */
+  --boxShadow: #afa4a2;
+  /* theme-2 #A59D92
+  theme-3 #86219B */
+  --bgColorResetDelete: #a2b3e1;
+  /* theme-2 #62B5BD
+  theme-3 #8631B0 */
+  --bgEquals: #f96c5b;
+  /* theme-2 #FF8B38
+  theme-3 #94FFF9 */
+  --bgtextEquals: white;
+  /* theme-2 white
+  theme-3 black */
+  --bgKey: #e5e4e0;
+  /* theme-2 #E5E4E0
+  theme-3 #331B4D */
+  --textColKey: #434657;
+  /* theme-2 #35352D
+  theme-3 #FFEA6C */
+  --bgKeyPad: #252d44;
+  /* theme-2 #D3CDCD
+  theme-3 #1E0836 */
+  --bgResult: #181f32;
+  /* theme-2 #EEEEEE
+  theme-3  #1E0836 */
+  --colorUH: #fffffd;
+  /* theme-2 #36362A
+  theme-3  #FFE73C*/
+}
+/*
+    Typographic tweaks!
+    3. Add accessible line-height
+    4. Improve text rendering
+  */
+
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap");
+
+body {
+  font-family: "League Spartan", sans-serif;
+  font-size: 32px;
+  line-height: 1.5;
+  background-color: whitesmoke;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media screen and (max-width: 400px) {
+  body {
+    font-size: 20px;
+  }
+}
+/*
+    5. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+    6. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+    7. Avoid text overflows
+  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/*
+    8. Create a root stacking context
+  */
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/*mobile Design*/
+body {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainContainer {
+  height: auto;
+  width: 90vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.top {
+  padding-right: 20px;
+  font-size: 0.8em;
+  font-weight: 800;
+  margin-left: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.but {
+  grid-column: 4/5;
+  padding-right: 20px;
+}
+
+.but button {
+  padding-bottom: 5px;
+  text-align: center;
+  border-radius: 25px;
+  font-size: 0.6em;
+  padding: 5px;
+  height: 80%;
+  aspect-ratio: 3/1;
+}
+
+.keyPad button {
+  color: var(--keyTextColor);
+  box-shadow: var(--boxShadow) 0 3px;
+  border: solid;
+  font-weight: 800;
+  border-radius: 15px;
+  width: 100%;
+}
+
+.keyPad button:hover {
+  transition: box-shadow 0.3s;
+  box-shadow: none;
+}
+
+.result {
+  font-weight: 800;
+  font-size: 1.25em;
+  padding: 20px;
+  padding-top: 25px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  width: 100%;
+  height: 77.5px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  background-color: black;
+  color: white;
+  overflow: hidden;
+}
+
+.processed {
+  font-size: 0.4em;
+  opacity: 0.5;
+}
+
+.keyPad {
+  background-color: var(--padColor);
+  border-radius: 10px;
+  background-color: grey;
+  padding: 20px;
+  width: 100%;
+  display: grid;
+  row-gap: 10px;
+  column-gap: 10px;
+  grid-template-columns: repeat(1fr, 4);
+}
+
+.row-1,
+.row-2,
+.row-3,
+.row-4,
+.row-5 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.key {
+  text-align: center;
+  width: 20%;
+  height: auto;
+}
+
+.bigKey {
+  font-size: 1em;
+  text-align: center;
+  width: 46.75%;
+}
+
+/*Themes*/
+body {
+  background-color: var(--backgroundColor);
+}
+
+#Reset,
+#Delete {
+  background-color: var(--bgColorResetDelete);
+  color: #fff7ff;
+}
+
+#Delete {
+  font-size: 0.8em;
+}
+
+#result {
+  background-color: var(--bgEquals);
+  color: var(--bgtextEquals);
+}
+
+.key button {
+  color: var(--textColKey);
+  background-color: var(--bgKey);
+}
+
+.keyPad {
+  background-color: var(--bgKeyPad);
+}
+
+.result {
+  background-color: var(--bgResult);
+}
+
+.result,
+.top {
+  color: var(--colorUH);
+}
+
+.but button {
+  color: var(--colorUH);
+  background-color: var(--bgKeyPad);
+}
+
+@media screen and (min-width: 420px) {
+  .mainContainer {
+    width: 370px;
+  }
+}

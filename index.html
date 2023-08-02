@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="./styles.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Calculator app</title>
+  </head>
+  <body>
+    <div class="mainContainer">
+      <div class="top">
+        <div class="title">calc</div>
+        <div class="but"><button>THEME</button></div>
+      </div>
+      <div class="resultBox">
+        <div class="result">
+          <div class="processed"></div>
+          <div class="unprocessed"></div>
+        </div>
+      </div>
+      <div class="keyPad">
+        <div class="row-1">
+          <div data-number class="key"><button>7</button></div>
+          <div data-number class="key"><button>8</button></div>
+          <div data-number class="key"><button>9</button></div>
+          <div class="key"><button id="Delete">DEL</button></div>
+        </div>
+        <div class="row-2">
+          <div data-number class="key"><button>4</button></div>
+          <div data-number class="key"><button>5</button></div>
+          <div data-number class="key"><button>6</button></div>
+          <div data-operation class="key"><button>+</button></div>
+        </div>
+        <div class="row-3">
+          <div data-number class="key"><button>1</button></div>
+          <div data-number class="key"><button>2</button></div>
+          <div data-number class="key"><button>3</button></div>
+          <div data-operation class="key"><button>-</button></div>
+        </div>
+        <div class="row-4">
+          <div data-number class="key"><button>.</button></div>
+          <div data-number class="key"><button>0</button></div>
+          <div data-operation class="key"><button>/</button></div>
+          <div data-operation class="key"><button>x</button></div>
+        </div>
+        <div class="row-5">
+          <div class="bigKey"><button id="Reset">RESET</button></div>
+          <div class="bigKey"><button id="result">=</button></div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js" type="module" defer></script>
+  </body>
+</html>
