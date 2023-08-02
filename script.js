@@ -2,7 +2,7 @@ import { changeTheme } from "./themeChange.js";
 import { Calculator } from "./calculator.js";
 //Theme Changing button
 const themeBut = document.querySelector(".but button");
-let count = 0;
+let count = 1;
 themeBut.addEventListener("click", (ev) => {
   changeTheme(count);
   count++;
